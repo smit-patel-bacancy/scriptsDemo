@@ -1,12 +1,32 @@
 {
   "name": "demo-project",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "prebuild": "npm --no-git-tag-version version patch",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+
+    "host": "ng serve --host 0.0.0.0",
+    "port": "ng serve --port 53000",
+    "host-port": "ng serve --port 53000 --host 0.0.0.0",
+
+    "patchVersionUp": "npm --no-git-tag-version version patch",
+    "minorVersionUp": "npm --no-git-tag-version version minor",
+    "majorVersionUp": "npm --no-git-tag-version version major",
+
+    "testNodeScript": "node ./scripts/testScript1.js",
+    "testCmdScript": "test.cmd",
+
+    "pretry": "node ./scripts/testScript1.js",
+    "try": "node ./scripts/testScript2.js",
+    "posttry": "node ./scripts/testScript3.js",
+
+    "singleTry1": "npm run testNodeScript && npm run testCmdScript",
+    "singleTry2": "node ./scripts/testScript1.js && node ./scripts/testScript2.js && node ./scripts/testScript3.js",
+    "postsingleTry": "cls"
   },
   "private": true,
   "dependencies": {
